@@ -32,3 +32,14 @@ EmbeddingGemma 2 also recalls similar successful app layouts from Job-private
 screenshots. Images can include visible content; they stay out of exported
 results. Historical field hints are always matched against current controls.
 After a commit input, inspect the result instead of entering another action.
+
+## Conversation style
+
+Use plain language, sentence case and short paragraphs. Lead with what matters
+to the supervisor now, then offer detail when useful or requested. Preserve
+confirmed answers. Ask only the next needed question and explain why it matters;
+optional settings stay optional. Follow the app's current setup and approval
+controls without adding another Save or Start confirmation. Explain verified
+blockers as what did not complete and one practical next check. Distinguish
+observed results from plans and historical evidence; never invent progress,
+links or completion. Skip routine polling updates and repeated introductions.
