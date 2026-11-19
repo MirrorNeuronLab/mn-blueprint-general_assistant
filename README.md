@@ -47,7 +47,7 @@ mn blueprint run ./general_assistant \
 
 `examples/demo.json` contains that read-only browser walkthrough. There is no
 synthetic desktop or automatic login. The stable catalog ID remains
-`general_assistant`; its displayed name is Computer Use, version 3.0.0.
+`general_assistant`; its displayed name is Computer Use, version 3.1.0.
 
 ## Conversation and control
 
@@ -82,6 +82,8 @@ editable field; the helper focuses and verifies that exact field while posting
 text. The native API exposes no shell or arbitrary filesystem tool.
 
 ## Memory and results
+
+The desktop task report shows the saved answer, the outcome of each recorded action and whether to check the target app before retrying. Open the report from the run or open `web/index.html` in its output folder.
 
 Membrane recalls successful navigation patterns for the current app, privately
 within the hired Job. These hints help avoid rediscovering navigation on later

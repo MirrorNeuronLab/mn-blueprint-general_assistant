@@ -131,6 +131,8 @@ Audit entries contain app IDs and action types, not task content. Model screensh
 and raw receipts remain private run artifacts. Only the public answer is a
 prepared conversation source. The configured provider may see screen content.
 
+An optional `web/index.html` and verified `web_ui.json` present the saved answer, content-free audit and reconciliation status. The report is delivered with the other public outputs.
+
 Acceptance compiles the published bindings; verifies Mac/local placement,
 24 GB admission, system-default vision and native permission ownership; exercises
 Gmail-style login/help and completion, expired/foreign replies, malformed tools,

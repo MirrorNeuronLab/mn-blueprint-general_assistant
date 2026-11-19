@@ -3,7 +3,7 @@ import hashlib
 
 from mn_sdk.blueprint.hooks import report_activity
 from mn_sdk.blueprint.memory import context_memory_section_enabled
-from mn_sdk.blueprint.outputs import publish_files
+from mn_sdk.blueprint.outputs import merge_publications, publish_files
 from mn_sdk_common.publication import ArtifactWrite
 
 from .configuration import read_value
@@ -29,6 +29,11 @@ def publish(block, inputs):
         header = "Run reference: " + block.run_id + "\nTask status: " + result["status"] + "\n\n"
         writes.append(ArtifactWrite("conversation-answer", path, header.encode() + answer, kind="markdown"))
     publication = publish_files(block, writes, name="computer-use-results")
+    if block.config.get("web_ui", {}).get("enabled") is not False:
+        from .task_report import publish_preview
+        preview = publish_preview(block, public, answer, audit)
+        if preview:
+            publication = merge_publications(block, publication, preview)
     report_activity("Computer-use result published: " + result["status"], kind="result",
                     step_id=block.step_id, run_dir=block.store.run_dir)
     Conversation(block).notice("result", "The task is complete. Review the observed result in answer.md."

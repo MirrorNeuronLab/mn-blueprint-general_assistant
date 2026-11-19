@@ -1,5 +1,12 @@
 {
   "$schema": "https://mirrorneuron.io/schemas/blueprint/v1/extensions/ui.schema.json",
+  "web_ui": {
+    "enabled": true,
+    "adapter": "static_html",
+    "kind": "output",
+    "title": "Desktop task report",
+    "description": "Review the observed answer, content-free action audit and any outcome that needs checking."
+  },
   "init_config_review": {
     "required": true,
     "title": "Set up computer use on this Mac",
@@ -40,7 +47,7 @@
   ],
   "setup_guide": {
     "schema": "otterdesk.setup_guide.v1",
-    "introduction": "Describe what you want done on this Mac. The mn computer use helper has its own app for screen and input permissions. I will ask in Chat if you need to open an app, sign in, or resolve a blocker.",
+    "introduction": "Give me one task on this Mac. For a small first try, ask me to read the title of the active window. I’ll check the screen and tell you what I observed.",
     "sample": {
       "available": false,
       "values": {}
@@ -50,6 +57,11 @@
       "values": {}
     },
     "fields": [],
-    "prompt_file": "@/payloads/prompts/setup.md"
+    "prompt_file": "@/payloads/prompts/setup.md",
+    "run_guidance": {
+      "on_start": "I’ll use the visible screen to check the task you gave me. If I need an app opened or a sign-in, I’ll ask in Chat.",
+      "output_ready": "Open answer.md in the output folder to compare the requested task with the observed result.",
+      "web_ui_ready": "Open the desktop task report and check the recorded actions against the observed answer."
+    }
   }
 }

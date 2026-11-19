@@ -85,6 +85,31 @@
         "mime_type": "application/json",
         "required": true,
         "privacy": "confidential"
+      },
+      {
+        "artifact_id": "web_ui",
+        "path": "web_ui.json",
+        "mime_type": "application/json",
+        "type": "web_ui",
+        "required": false,
+        "source_refs": [
+          "web/index.html"
+        ],
+        "schema_version": "mn.blueprint.web_ui.v1",
+        "privacy": "confidential"
+      },
+      {
+        "artifact_id": "web_report",
+        "path": "web/index.html",
+        "mime_type": "text/html",
+        "type": "web_report",
+        "required": false,
+        "privacy": "confidential",
+        "source_refs": [
+          "result.json",
+          "answer.md",
+          "computer-use-audit.json"
+        ]
       }
     ]
   },
